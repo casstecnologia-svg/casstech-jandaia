@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site, whatsappLink } from '@/site.config';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const d = post.data;
+const fmt = (date: Date) =>
+  date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: d.title,
+  description: d.description,
+  datePublished: d.pubDate.toISOString(),
+  author: { '@type': 'Organization', name: d.author },
+  publisher: { '@id': `${site.domain}/#business` },
+  mainEntityOfPage: `${site.domain}/blog/${post.slug}`,
+};
+---
+
+<BaseLayout
+  title={`${d.title} | Blog Casstech`}
+  description={d.description}
+  path={`/blog/${post.slug}`}
+  structuredData={articleSchema}
+>
+  <article class="section">
+    <div class="container-wide max-w-3xl">
+      <nav class="mb-6 flex items-center gap-2 text-xs text-ink-500" aria-label="breadcrumb">
+        <a href="/" class="hover:text-primary">Inicio</a><span>/</span>
+        <a href="/blog" class="hover:text-primary">Blog</a><span>/</span>
+        <span class="text-ink-300">{d.title}</span>
+      </nav>
+
+      <div class="flex flex-wrap gap-2">
+        {d.tags.map((t) => (
+          <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">{t}</span>
+        ))}
+      </div>
+      <h1 class="mt-4 text-fluid-h2 font-bold leading-tight">{d.title}</h1>
+      <p class="mt-3 text-sm text-ink-500">{fmt(d.pubDate)} - {d.author}</p>
+
+      <div class="mt-8 space-y-5 text-ink-300 [&_h2]:mt-10 [&_h2]:text-fluid-h3 [&_h2]:font-bold [&_h2]:text-ink-100 [&_ul]:mt-4 [&_ul]:space-y-2 [&_li]:list-disc [&_li]:ml-5 [&_strong]:text-ink-100 [&_a]:text-primary">
+        <Content />
+      </div>
+
+      <div class="mt-12 glass rounded-2xl p-6 text-center">
+        <p class="text-ink-300">Precisa de ajuda com o seu equipamento?</p>
+        <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp mt-4">
+          <Icon name="lucide:message-circle" class="h-5 w-5" />
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

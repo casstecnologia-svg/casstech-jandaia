@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+---
+
+<BaseLayout
+  title="Blog | Dicas de Tecnologia e Manutencao | Casstech Jandaia"
+  description="Dicas praticas sobre notebooks, manutencao, upgrades e tecnologia. Conteudo da Casstech Jandaia para voce cuidar melhor dos seus equipamentos."
+  path="/blog"
+>
+  <section class="relative overflow-hidden border-b border-line bg-bg-800">
+    <div class="absolute inset-0 bg-glow-radial opacity-60"></div>
+    <div class="container-wide relative py-20 sm:py-24">
+      <span class="eyebrow">Blog</span>
+      <h1 class="mt-3 max-w-3xl text-fluid-h2 font-bold">Dicas de tecnologia que economizam o seu dinheiro</h1>
+      <p class="mt-4 max-w-2xl text-lg text-ink-300">
+        Conteudo pratico sobre manutencao, upgrades e cuidados com os seus equipamentos.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <a href={`/blog/${post.slug}`} class="card-service group flex flex-col">
+          <div class="flex flex-wrap gap-2">
+            {post.data.tags.slice(0, 2).map((t) => (
+              <span class="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">{t}</span>
+            ))}
+          </div>
+          <h2 class="mt-4 text-lg font-semibold text-ink-100 group-hover:text-primary">{post.data.title}</h2>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-500">{post.data.description}</p>
+          <div class="mt-5 flex items-center justify-between text-xs text-ink-500">
+            <span>{fmt(post.data.pubDate)}</span>
+            <Icon name="lucide:arrow-right" class="h-4 w-4 text-primary transition-transform group-hover:translate-x-1" />
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

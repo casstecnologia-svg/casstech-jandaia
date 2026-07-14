@@ -1,0 +1,74 @@
+---
+import { Icon } from 'astro-icon/components';
+import { site, nav, whatsappLink } from '@/site.config';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line bg-bg-800">
+  <div class="container-wide grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
+    <div class="lg:col-span-1">
+      <a href="/" class="inline-block" aria-label={`${site.name} - inicio`}>
+        <img src="/logo-white.png" alt="Casstech Jandaia" width="200" height="127" class="h-20 w-auto" />
+      </a>
+      <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-500">
+        Assistencia tecnica especializada e desenvolvimento de sistemas em {site.city} e regiao.
+      </p>
+      <div class="mt-5 flex gap-3">
+        <a href={site.instagramUrl} target="_blank" rel="noopener" aria-label="Instagram"
+          class="grid h-10 w-10 place-items-center rounded-lg border border-line text-ink-300 hover:border-primary/60 hover:text-primary">
+          <Icon name="lucide:instagram" class="h-5 w-5" />
+        </a>
+        <a href={whatsappLink} target="_blank" rel="noopener" aria-label="WhatsApp"
+          class="grid h-10 w-10 place-items-center rounded-lg border border-line text-ink-300 hover:border-whatsapp/60 hover:text-whatsapp">
+          <Icon name="lucide:message-circle" class="h-5 w-5" />
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-ink-100">Navegacao</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        {nav.map((item) => (
+          <li><a href={item.href} class="text-ink-500 hover:text-primary">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-ink-100">Contato</h3>
+      <ul class="mt-4 space-y-3 text-sm text-ink-500">
+        <li class="flex items-center gap-2">
+          <Icon name="lucide:phone" class="h-4 w-4 text-primary" />
+          <a href={whatsappLink} target="_blank" rel="noopener" class="hover:text-primary">{site.phoneDisplay}</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <Icon name="lucide:instagram" class="h-4 w-4 text-primary" />
+          <a href={site.instagramUrl} target="_blank" rel="noopener" class="hover:text-primary">{site.instagramHandle}</a>
+        </li>
+        <li class="flex items-start gap-2">
+          <Icon name="lucide:map-pin" class="mt-0.5 h-4 w-4 text-primary" />
+          <span>{site.city} - {site.state}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-ink-100">Horario</h3>
+      <p class="mt-4 flex items-start gap-2 text-sm text-ink-500">
+        <Icon name="lucide:clock" class="mt-0.5 h-4 w-4 text-primary" />
+        <span>{site.openingHours}</span>
+      </p>
+      <a href={whatsappLink} target="_blank" rel="noopener" class="btn-primary mt-5 w-full">
+        <Icon name="lucide:message-circle" class="h-4 w-4" />
+        Pedir orcamento
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-line">
+    <div class="container-wide flex flex-col items-center justify-between gap-2 py-6 text-xs text-ink-500 sm:flex-row">
+      <p>&copy; {year} {site.legalName}. Todos os direitos reservados.</p>
+      <p>{site.city} - {site.state} - Brasil</p>
+    </div>
+  </div>
+</footer>

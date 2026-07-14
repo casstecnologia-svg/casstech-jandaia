@@ -1,0 +1,82 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Descomente a linha abaixo para testar o painel localmente sem Git:
+# local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+site_url: https://www.casstechjandaia.com.br
+display_url: https://www.casstechjandaia.com.br
+locale: pt
+
+collections:
+  - name: "servicos"
+    label: "Servicos"
+    label_singular: "Servico"
+    folder: "src/content/servicos"
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Titulo curto", name: "shortTitle", widget: "string", required: false }
+      - { label: "Ordem", name: "order", widget: "number", default: 99, value_type: "int" }
+      - { label: "Icone (ex: lucide:cpu)", name: "icon", widget: "string", default: "lucide:wrench" }
+      - { label: "Resumo", name: "excerpt", widget: "text" }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options: ["alta-complexidade", "geral", "desenvolvimento", "corporativo"]
+      - { label: "Destaque na home", name: "featured", widget: "boolean", default: true }
+      - { label: "Palavras-chave", name: "keywords", widget: "list", required: false }
+      - { label: "Beneficios", name: "highlights", widget: "list", required: false }
+      - { label: "SEO Title", name: "seoTitle", widget: "string", required: false }
+      - { label: "SEO Description", name: "seoDescription", widget: "text", required: false }
+      - { label: "Conteudo", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Post"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Descricao", name: "description", widget: "text" }
+      - { label: "Data", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Autor", name: "author", widget: "string", default: "Equipe Casstech" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Conteudo", name: "body", widget: "markdown" }
+
+  - name: "depoimentos"
+    label: "Depoimentos"
+    label_singular: "Depoimento"
+    folder: "src/content/depoimentos"
+    create: true
+    slug: "{{fields.order}}-{{slug}}"
+    extension: json
+    format: json
+    fields:
+      - { label: "Nome", name: "nome", widget: "string" }
+      - { label: "Cidade", name: "cidade", widget: "string" }
+      - { label: "Texto", name: "texto", widget: "text" }
+      - { label: "Nota (1-5)", name: "nota", widget: "number", default: 5, value_type: "int", min: 1, max: 5 }
+      - { label: "Ordem", name: "order", widget: "number", default: 99, value_type: "int" }
+
+  - name: "faq"
+    label: "Perguntas Frequentes"
+    label_singular: "Pergunta"
+    folder: "src/content/faq"
+    create: true
+    slug: "{{fields.order}}-{{slug}}"
+    extension: json
+    format: json
+    fields:
+      - { label: "Pergunta", name: "pergunta", widget: "string" }
+      - { label: "Resposta", name: "resposta", widget: "text" }
+      - { label: "Ordem", name: "order", widget: "number", default: 99, value_type: "int" }

@@ -1,0 +1,93 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site, whatsappLink } from '@/site.config';
+
+const valores = [
+  { icon: 'lucide:microscope', title: 'Profundidade tecnica', desc: 'Reparo em nivel de componente e diagnostico preciso.' },
+  { icon: 'lucide:eye', title: 'Transparencia', desc: 'Orcamento claro e comunicacao honesta em cada etapa.' },
+  { icon: 'lucide:heart-handshake', title: 'Compromisso', desc: 'Tratamos o seu equipamento e os seus dados com respeito.' },
+  { icon: 'lucide:rocket', title: 'Inovacao', desc: 'Do reparo ao desenvolvimento de sistemas sob medida.' },
+];
+---
+
+<BaseLayout
+  title="Sobre a Casstech Jandaia | Autoridade em Tecnologia"
+  description="Conheca a Casstech Jandaia: assistencia tecnica especializada, solucoes de TI para empresas e desenvolvimento de sistemas em Jandaia de Goias e regiao."
+  path="/sobre"
+>
+  <section class="relative overflow-hidden border-b border-line bg-bg-800">
+    <div class="absolute inset-0 bg-glow-radial opacity-60"></div>
+    <div class="container-wide relative py-20 sm:py-24">
+      <span class="eyebrow">Sobre nos</span>
+      <h1 class="mt-3 max-w-3xl text-fluid-h2 font-bold">
+        Tecnologia com autoridade, atendimento com confianca
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-ink-300">
+        A Casstech Jandaia nasceu para oferecer o que faltava na regiao: assistencia
+        tecnica de verdade, com profundidade tecnica, transparencia e solucoes
+        digitais completas para pessoas e empresas.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide grid gap-12 lg:grid-cols-2">
+      <div class="space-y-5 text-ink-300">
+        <h2 class="text-fluid-h3 font-bold text-ink-100">Quem somos</h2>
+        <p>
+          Somos especialistas em reparos que exigem experiencia real, como manutencao
+          em placa-mae de notebook, recuperacao de dados e gerenciamento termico.
+          Onde muitos dizem "nao tem conserto", nos investigamos a fundo.
+        </p>
+        <p>
+          Alem do hardware, cuidamos da TI de empresas com contratos de manutencao
+          mensal e gestao de chamados, e desenvolvemos <strong class="text-ink-100">aplicativos e
+          sistemas sob medida</strong> para ramos como alimenticio, agropecuaria, lanchonetes,
+          pizzarias, bares, restaurantes, vendas e servicos.
+        </p>
+        <p>
+          Nosso compromisso é simples: resolver o seu problema com competencia e te
+          tratar com a honestidade que voce merece.
+        </p>
+        <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp mt-2">
+          <Icon name="lucide:message-circle" class="h-5 w-5" />
+          Falar com a gente
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        {valores.map((v) => (
+          <div class="glass rounded-2xl p-6">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
+              <Icon name={v.icon} class="h-6 w-6" />
+            </span>
+            <h3 class="mt-4 text-base font-semibold text-ink-100">{v.title}</h3>
+            <p class="mt-2 text-sm text-ink-500">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bg-800">
+    <div class="container-wide">
+      <div class="glass rounded-3xl p-10 text-center">
+        <h2 class="text-fluid-h3 font-bold">Vamos conversar?</h2>
+        <p class="mx-auto mt-3 max-w-xl text-ink-300">
+          Seja um reparo, um contrato de TI ou um sistema para o seu negocio,
+          estamos prontos para ajudar.
+        </p>
+        <div class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp">
+            <Icon name="lucide:message-circle" class="h-5 w-5" />
+            WhatsApp
+          </a>
+          <a href={site.instagramUrl} target="_blank" rel="noopener" class="btn-ghost">
+            <Icon name="lucide:instagram" class="h-5 w-5" />
+            {site.instagramHandle}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

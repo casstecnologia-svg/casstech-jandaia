@@ -1,0 +1,109 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site, whatsappLink } from '@/site.config';
+
+const beneficios = [
+  { icon: 'lucide:shield-check', title: 'Manutencao preventiva', desc: 'Evitamos problemas antes que eles parem a sua operacao.' },
+  { icon: 'lucide:ticket', title: 'Gestao de chamados', desc: 'Controle organizado de solicitacoes, com historico e prioridade.' },
+  { icon: 'lucide:timer', title: 'Atendimento prioritario', desc: 'Sua empresa nao pode esperar. Resposta agil quando precisa.' },
+  { icon: 'lucide:wallet', title: 'Custo previsivel', desc: 'Mensalidade fixa, sem sustos com emergencias de TI.' },
+  { icon: 'lucide:network', title: 'Infra e redes', desc: 'Computadores, redes e perifericos sempre funcionando.' },
+  { icon: 'lucide:building-2', title: 'Comercio e orgaos publicos', desc: 'Experiencia com o comercio local e o setor publico da regiao.' },
+];
+
+const publico = [
+  'Comercio local (lojas, distribuidoras, mercados)',
+  'Orgaos publicos e prefeituras',
+  'Escritorios e prestadores de servico',
+  'Clinicas, agropecuarias e food service',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Contrato de Manutencao Mensal de TI',
+  serviceType: 'Suporte e manutencao de TI para empresas',
+  description: 'Contratos mensais de manutencao de TI com gestao de chamados para comercio local e orgaos publicos em Jandaia de Goias e regiao.',
+  provider: { '@id': `${site.domain}/#business` },
+  areaServed: site.region,
+};
+---
+
+<BaseLayout
+  title="Manutencao de TI para Empresas em Jandaia de Goias | Casstech"
+  description="Contratos de manutencao mensal de TI para comercio local e orgaos publicos, com gerenciamento de chamados tecnicos e atendimento prioritario em Jandaia de Goias e regiao."
+  path="/empresas"
+  structuredData={serviceSchema}
+>
+  <section class="relative overflow-hidden border-b border-line bg-bg-800">
+    <div class="absolute inset-0 bg-glow-radial opacity-60"></div>
+    <div class="container-wide relative py-20 sm:py-24">
+      <span class="eyebrow">Solucoes Corporativas - B2B</span>
+      <h1 class="mt-3 max-w-3xl text-fluid-h2 font-bold">
+        A TI da sua empresa sempre no ar, com custo previsivel
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-ink-300">
+        Fechamos parcerias de manutencao mensal de TI para o comercio local e orgaos
+        publicos. Cuidamos da sua infraestrutura enquanto voce cuida do seu negocio.
+      </p>
+      <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp mt-8">
+        <Icon name="lucide:message-circle" class="h-5 w-5" />
+        Falar sobre um contrato
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-wide">
+      <div class="max-w-2xl">
+        <span class="eyebrow">Vantagens do contrato</span>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Know-how em gestao de chamados tecnicos</h2>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {beneficios.map((b) => (
+          <div class="rounded-2xl border border-line bg-surface/40 p-6">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
+              <Icon name={b.icon} class="h-6 w-6" />
+            </span>
+            <h3 class="mt-5 text-base font-semibold text-ink-100">{b.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-500">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bg-800">
+    <div class="container-wide grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <span class="eyebrow">Para quem</span>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Feito para quem nao pode parar</h2>
+        <p class="mt-4 text-ink-300">
+          Atendemos diferentes perfis de organizacoes na regiao de Jandaia de Goias,
+          com planos ajustados ao tamanho e a necessidade de cada uma.
+        </p>
+        <ul class="mt-6 space-y-3">
+          {publico.map((p) => (
+            <li class="flex items-start gap-3 text-ink-300">
+              <Icon name="lucide:check-circle-2" class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="glass rounded-3xl p-8 sm:p-10">
+        <h3 class="text-fluid-h3 font-bold">Monte o seu plano de TI</h3>
+        <p class="mt-3 text-ink-300">
+          Conte quantos equipamentos voce tem e como funciona a sua operacao.
+          Preparamos uma proposta sob medida.
+        </p>
+        <a href={whatsappLink} target="_blank" rel="noopener" class="btn-primary mt-6 w-full">
+          <Icon name="lucide:message-circle" class="h-5 w-5" />
+          Solicitar proposta
+        </a>
+        <p class="mt-4 text-center text-sm text-ink-500">{site.phoneDisplay}</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,307 @@
+---
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import FAQ from '@/components/FAQ.astro';
+import { site, whatsappLink, cidades } from '@/site.config';
+
+const servicos = (await getCollection('servicos'))
+  .filter((s) => s.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const depoimentos = (await getCollection('depoimentos')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const faqItems = (await getCollection('faq'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((f) => f.data);
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((f) => ({
+    '@type': 'Question',
+    name: f.pergunta,
+    acceptedAnswer: { '@type': 'Answer', text: f.resposta },
+  })),
+};
+
+const processo = [
+  { icon: 'lucide:message-circle', title: 'Chame no WhatsApp', desc: 'Conte o problema. Resposta rapida e sem compromisso.' },
+  { icon: 'lucide:search-check', title: 'Diagnostico', desc: 'Identificamos a causa raiz com precisao antes de qualquer valor.' },
+  { icon: 'lucide:file-text', title: 'Orcamento transparente', desc: 'Voce sabe exatamente o que sera feito e por quanto.' },
+  { icon: 'lucide:shield-check', title: 'Conserto com garantia', desc: 'Servico executado com qualidade e garantia.' },
+];
+
+const diferenciais = [
+  { icon: 'lucide:microscope', title: 'Reparo em nivel de componente', desc: 'Vamos alem da troca de pecas: consertamos o que outros descartam.' },
+  { icon: 'lucide:eye', title: 'Transparencia total', desc: 'Sem letra miuda. Orcamento claro antes de comecar.' },
+  { icon: 'lucide:zap', title: 'Agilidade real', desc: 'Diagnostico rapido e atendimento que respeita o seu tempo.' },
+  { icon: 'lucide:headset', title: 'Gestao de chamados', desc: 'Know-how em suporte de TI com controle de chamados para empresas.' },
+];
+---
+
+<BaseLayout
+  title="Casstech Jandaia | Assistencia Tecnica de Notebook e TI em Jandaia de Goias"
+  description={site.description}
+  path="/"
+  structuredData={faqSchema}
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-glow-radial"></div>
+    <div class="absolute inset-0 bg-grid-tech [background-size:44px_44px] opacity-30 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"></div>
+    <div class="container-wide relative py-24 sm:py-32 lg:py-40">
+      <div class="mx-auto max-w-3xl text-center animate-floatUp">
+        <span class="chip mx-auto">
+          <span class="h-2 w-2 rounded-full bg-primary"></span>
+          Atendimento em {site.region}
+        </span>
+        <h1 class="mt-6 text-fluid-hero font-bold leading-[1.05] text-ink-100">
+          Tecnologia que resolve.
+          <span class="gradient-text">Confianca que fica.</span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-300">
+          Assistencia tecnica especializada em notebooks, recuperacao de dados,
+          upgrades e solucoes de TI para empresas. Tambem desenvolvemos
+          aplicativos e sistemas sob medida para o seu negocio.
+        </p>
+        <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp w-full sm:w-auto">
+            <Icon name="lucide:message-circle" class="h-5 w-5" />
+            Pedir orcamento no WhatsApp
+          </a>
+          <a href="/servicos" class="btn-ghost w-full sm:w-auto">
+            Ver servicos
+            <Icon name="lucide:arrow-right" class="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BARRA DE CONFIANCA -->
+  <section class="border-y border-line bg-bg-800">
+    <div class="container-wide grid grid-cols-2 gap-4 py-8 lg:grid-cols-4">
+      {[
+        { icon: 'lucide:badge-check', label: 'Orcamento sem compromisso' },
+        { icon: 'lucide:map-pin', label: 'Jandaia de Goias e regiao' },
+        { icon: 'lucide:shield-check', label: 'Garantia no servico' },
+        { icon: 'lucide:cpu', label: 'Diagnostico especializado' },
+      ].map((b) => (
+        <div class="flex items-center justify-center gap-3 text-center">
+          <Icon name={b.icon} class="h-6 w-6 flex-shrink-0 text-primary" />
+          <span class="text-sm font-medium text-ink-300">{b.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SERVICOS -->
+  <section class="section" id="servicos">
+    <div class="container-wide">
+      <div class="max-w-2xl">
+        <span class="eyebrow">Nossos servicos</span>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Do reparo de alta complexidade ao sistema sob medida</h2>
+        <p class="mt-4 text-ink-300">
+          Cuidamos do seu equipamento com profundidade tecnica e desenvolvemos
+          solucoes digitais para o seu negocio crescer.
+        </p>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {servicos.map((s) => (
+          <ServiceCard
+            title={s.data.shortTitle ?? s.data.title}
+            excerpt={s.data.excerpt}
+            icon={s.data.icon}
+            href={`/servicos/${s.slug}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B -->
+  <section class="section bg-bg-800">
+    <div class="container-wide">
+      <div class="glass relative overflow-hidden rounded-3xl p-8 sm:p-12 lg:p-16">
+        <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>
+        <div class="relative grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <span class="eyebrow">Solucoes Corporativas - B2B</span>
+            <h2 class="mt-3 text-fluid-h2 font-bold">Mantenha a TI da sua empresa sempre no ar</h2>
+            <p class="mt-4 text-ink-300">
+              Computador parado custa caro. Oferecemos contratos de
+              <strong class="text-ink-100"> manutencao mensal de TI</strong> para o
+              comercio local e orgaos publicos, com
+              <strong class="text-ink-100"> gerenciamento de chamados tecnicos</strong> e
+              atendimento prioritario.
+            </p>
+            <ul class="mt-6 space-y-3">
+              {[
+                'Manutencao preventiva e corretiva mensal',
+                'Gestao e controle de chamados tecnicos',
+                'Atendimento prioritario para o seu negocio',
+                'Parceria com comercio local e orgaos publicos',
+              ].map((li) => (
+                <li class="flex items-start gap-3 text-ink-300">
+                  <Icon name="lucide:check-circle-2" class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+                  <span>{li}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/empresas" class="btn-primary mt-8">
+              Conhecer solucoes para empresas
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </a>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { icon: 'lucide:server', k: 'Infra', v: 'Estavel' },
+              { icon: 'lucide:ticket', k: 'Chamados', v: 'Sob controle' },
+              { icon: 'lucide:timer', k: 'Resposta', v: 'Prioritaria' },
+              { icon: 'lucide:building-2', k: 'Foco', v: 'Comercio e orgaos' },
+            ].map((c) => (
+              <div class="glass rounded-2xl p-6">
+                <Icon name={c.icon} class="h-8 w-8 text-primary" />
+                <p class="mt-4 text-xs uppercase tracking-wider text-ink-500">{c.k}</p>
+                <p class="text-lg font-semibold text-ink-100">{c.v}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="section">
+    <div class="container-wide">
+      <div class="max-w-2xl">
+        <span class="eyebrow">Por que a Casstech</span>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Autoridade tecnica que voce sente na pratica</h2>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {diferenciais.map((d) => (
+          <div class="rounded-2xl border border-line bg-surface/40 p-6">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
+              <Icon name={d.icon} class="h-6 w-6" />
+            </span>
+            <h3 class="mt-5 text-base font-semibold text-ink-100">{d.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-500">{d.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="section bg-bg-800">
+    <div class="container-wide">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="eyebrow">Como funciona</span>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Simples, rapido e sem surpresas</h2>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {processo.map((p, i) => (
+          <div class="relative rounded-2xl border border-line bg-surface/40 p-6">
+            <span class="text-sm font-bold text-primary">0{i + 1}</span>
+            <span class="mt-3 grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
+              <Icon name={p.icon} class="h-5 w-5" />
+            </span>
+            <h3 class="mt-4 text-base font-semibold text-ink-100">{p.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-500">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section class="section">
+    <div class="container-wide">
+      <div class="max-w-2xl">
+        <span class="eyebrow">Quem confia, recomenda</span>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Clientes satisfeitos em Jandaia e regiao</h2>
+      </div>
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {depoimentos.map((d) => (
+          <figure class="glass rounded-2xl p-6">
+            <div class="flex gap-0.5 text-primary">
+              {Array.from({ length: d.data.nota }).map(() => (
+                <Icon name="lucide:star" class="h-4 w-4" />
+              ))}
+            </div>
+            <blockquote class="mt-4 text-sm leading-relaxed text-ink-300">"{d.data.texto}"</blockquote>
+            <figcaption class="mt-5 text-sm">
+              <span class="font-semibold text-ink-100">{d.data.nome}</span>
+              <span class="text-ink-500"> - {d.data.cidade}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA DE ATUACAO -->
+  <section class="section bg-bg-800">
+    <div class="container-wide">
+      <div class="grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <span class="eyebrow">Area de atuacao</span>
+          <h2 class="mt-3 text-fluid-h2 font-bold">Perto de voce, em Jandaia de Goias e cidades vizinhas</h2>
+          <p class="mt-4 text-ink-300">
+            Atendemos clientes residenciais e empresas em toda a regiao. Nao
+            encontrou a sua cidade? Fale com a gente que confirmamos o atendimento.
+          </p>
+          <a href="/area-de-atuacao" class="btn-ghost mt-6">
+            Ver todas as cidades
+            <Icon name="lucide:arrow-right" class="h-4 w-4" />
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+          {cidades.map((c) => (
+            <span class="chip">
+              <Icon name="lucide:map-pin" class="h-3.5 w-3.5 text-primary" />
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container-wide">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="eyebrow">Duvidas frequentes</span>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Perguntas que recebemos com frequencia</h2>
+      </div>
+      <div class="mt-12">
+        <FAQ items={faqItems} />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="relative overflow-hidden border-t border-line">
+    <div class="absolute inset-0 bg-glow-radial"></div>
+    <div class="container-wide relative py-20 text-center">
+      <h2 class="mx-auto max-w-2xl text-fluid-h2 font-bold">
+        Seu equipamento precisa de <span class="gradient-text">solucao de verdade?</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-ink-300">
+        Chame agora no WhatsApp. Diagnostico com precisao, orcamento transparente e
+        atendimento de quem entende do assunto.
+      </p>
+      <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp mt-8 text-base">
+        <Icon name="lucide:message-circle" class="h-5 w-5" />
+        Falar agora no WhatsApp
+      </a>
+      <p class="mt-4 text-sm text-ink-500">{site.phoneDisplay} - {site.instagramHandle}</p>
+    </div>
+  </section>
+</BaseLayout>

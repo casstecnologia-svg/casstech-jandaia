@@ -1,0 +1,115 @@
+---
+import { Icon } from 'astro-icon/components';
+import { nav, whatsappLink, site } from '@/site.config';
+const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname.startsWith(href);
+---
+
+<header
+  id="site-header"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300"
+>
+  <div class="container-wide flex h-16 items-center justify-between py-3">
+    <a href="/" class="group flex items-center gap-2.5" aria-label={`${site.name} - inicio`}>
+      <img
+        src="/logo-icon.png"
+        alt="Casstech Jandaia"
+        width="40"
+        height="40"
+        class="h-9 w-auto"
+      />
+      <span class="font-display text-lg font-bold text-ink-100">
+        Casstech<span class="text-primary">.</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Principal">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+              isActive(item.href)
+                ? 'text-primary'
+                : 'text-ink-300 hover:text-ink-100',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden lg:block">
+      <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp">
+        <Icon name="lucide:message-circle" class="h-4 w-4" />
+        Falar no WhatsApp
+      </a>
+    </div>
+
+    <button
+      id="menu-toggle"
+      class="grid h-10 w-10 place-items-center rounded-lg border border-line text-ink-100 lg:hidden"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <Icon name="lucide:menu" class="h-6 w-6" id="menu-open-icon" />
+      <Icon name="lucide:x" class="hidden h-6 w-6" id="menu-close-icon" />
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-line bg-bg-800/95 backdrop-blur-lg lg:hidden"
+  >
+    <nav class="container-wide flex flex-col gap-1 py-4" aria-label="Menu mobile">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'rounded-lg px-3 py-3 text-base font-medium',
+              isActive(item.href) ? 'text-primary' : 'text-ink-300',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp mt-2">
+        <Icon name="lucide:message-circle" class="h-4 w-4" />
+        Falar no WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header');
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-open-icon');
+  const closeIcon = document.getElementById('menu-close-icon');
+
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('bg-bg-900/80', 'backdrop-blur-lg', 'border-line');
+    } else {
+      header?.classList.remove('bg-bg-900/80', 'backdrop-blur-lg', 'border-line');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  toggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden');
+    const expanded = open === false;
+    toggle.setAttribute('aria-expanded', String(expanded));
+    openIcon?.classList.toggle('hidden', expanded);
+    closeIcon?.classList.toggle('hidden', !expanded);
+  });
+</script>

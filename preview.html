@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prévia — Casstech Jandaia</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bg: { 900:'#05070D', 800:'#0A0E1A', 700:'#0E1424' },
+        surface: { DEFAULT:'#111827', light:'#151E33' },
+        line: '#1E2A44',
+        primary: { DEFAULT:'#00E5FF', 600:'#00B8D4' },
+        accent: { DEFAULT:'#3B82F6', glow:'#22D3EE' },
+        whatsapp: '#25D366', instagram:'#E1306C',
+        ink: { 100:'#F8FAFC', 300:'#CBD5E1', 500:'#94A3B8' },
+      },
+      fontFamily: { display:['"Space Grotesk"','sans-serif'], sans:['Inter','sans-serif'] },
+    }
+  }
+}
+</script>
+<style>
+  html{background:#05070D;color:#CBD5E1;font-family:Inter,sans-serif;scroll-behavior:smooth}
+  h1,h2,h3{font-family:"Space Grotesk",sans-serif;color:#F8FAFC;letter-spacing:-0.02em}
+  .brand-gradient{background:linear-gradient(135deg,#00E5FF 0%,#3B82F6 100%)}
+  .gradient-text{background:linear-gradient(135deg,#00E5FF,#3B82F6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .glass{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+  .glow-radial{background:radial-gradient(600px circle at 50% 0%,rgba(34,211,238,.18),transparent 70%)}
+  .grid-tech{background-image:linear-gradient(rgba(30,42,68,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(30,42,68,.6) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at top,black,transparent 70%);mask-image:radial-gradient(ellipse at top,black,transparent 70%)}
+  .card:hover{transform:translateY(-4px);border-color:rgba(0,229,255,.4);box-shadow:0 0 0 1px rgba(0,229,255,.25),0 8px 40px -12px rgba(0,229,255,.45)}
+  .card{transition:all .3s}
+  @keyframes ring{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  .pulse{animation:ring 2s infinite}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:.75rem;padding:.85rem 1.5rem;font-weight:600;font-size:.9rem;transition:all .2s;cursor:pointer}
+</style>
+</head>
+<body class="antialiased">
+
+<div class="bg-primary text-bg-900 text-center text-xs py-1.5 font-semibold">PRÉVIA VISUAL — versão real será gerada com Astro (build). Layout, cores e conteúdo são estes.</div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-bg-900/80 backdrop-blur-lg border-b border-line">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5">
+      <img src="public/logo-icon.png" alt="Casstech Jandaia" class="h-9 w-auto" />
+      <span class="font-display text-lg font-bold text-ink-100">Casstech<span class="text-primary">.</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-1 text-sm">
+      <a class="px-3 py-2 text-primary">Serviços</a>
+      <a class="px-3 py-2 text-ink-300 hover:text-ink-100">Desenvolvimento</a>
+      <a class="px-3 py-2 text-ink-300 hover:text-ink-100">Empresas</a>
+      <a class="px-3 py-2 text-ink-300 hover:text-ink-100">Área de Atuação</a>
+      <a class="px-3 py-2 text-ink-300 hover:text-ink-100">Blog</a>
+      <a class="px-3 py-2 text-ink-300 hover:text-ink-100">Sobre</a>
+      <a class="px-3 py-2 text-ink-300 hover:text-ink-100">Contato</a>
+    </nav>
+    <a class="btn bg-whatsapp text-bg-900 hidden lg:inline-flex"><i data-lucide="message-circle" class="h-4 w-4"></i>Falar no WhatsApp</a>
+    <button class="lg:hidden grid h-10 w-10 place-items-center rounded-lg border border-line text-ink-100"><i data-lucide="menu"></i></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 glow-radial"></div>
+  <div class="absolute inset-0 grid-tech opacity-30"></div>
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-8 py-24 sm:py-36 text-center">
+    <span class="inline-flex items-center gap-2 rounded-full border border-line bg-surface/50 px-4 py-2 text-sm text-ink-300"><span class="h-2 w-2 rounded-full bg-primary"></span>Atendimento em Jandaia de Goiás e região</span>
+    <h1 class="mt-6 font-bold leading-[1.05] text-ink-100" style="font-size:clamp(2.5rem,6vw,5rem)">Tecnologia que resolve.<br><span class="gradient-text">Confiança que fica.</span></h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg text-ink-300">Assistência técnica especializada em notebooks, recuperação de dados, upgrades e soluções de TI para empresas. Também desenvolvemos aplicativos e sistemas sob medida para o seu negócio.</p>
+    <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a class="btn bg-whatsapp text-bg-900 w-full sm:w-auto"><i data-lucide="message-circle" class="h-5 w-5"></i>Pedir orçamento no WhatsApp</a>
+      <a class="btn border border-line bg-surface/40 text-ink-100 w-full sm:w-auto">Ver serviços <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="border-y border-line bg-bg-800">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 grid grid-cols-2 lg:grid-cols-4 gap-4 py-8">
+    <div class="flex items-center justify-center gap-3"><i data-lucide="badge-check" class="h-6 w-6 text-primary"></i><span class="text-sm font-medium text-ink-300">Orçamento sem compromisso</span></div>
+    <div class="flex items-center justify-center gap-3"><i data-lucide="map-pin" class="h-6 w-6 text-primary"></i><span class="text-sm font-medium text-ink-300">Jandaia de Goiás e região</span></div>
+    <div class="flex items-center justify-center gap-3"><i data-lucide="shield-check" class="h-6 w-6 text-primary"></i><span class="text-sm font-medium text-ink-300">Garantia no serviço</span></div>
+    <div class="flex items-center justify-center gap-3"><i data-lucide="cpu" class="h-6 w-6 text-primary"></i><span class="text-sm font-medium text-ink-300">Diagnóstico especializado</span></div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Nossos serviços</span>
+    <h2 class="mt-3 font-bold" style="font-size:clamp(1.9rem,4vw,3rem)">Do reparo de alta complexidade ao sistema sob medida</h2>
+    <p class="mt-4 max-w-2xl text-ink-300">Cuidamos do seu equipamento com profundidade técnica e desenvolvemos soluções digitais para o seu negócio crescer.</p>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="svc"></div>
+  </div>
+</section>
+
+<!-- B2B -->
+<section class="py-20 sm:py-28 bg-bg-800">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <div class="glass relative overflow-hidden rounded-3xl p-8 sm:p-12 lg:p-16">
+      <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>
+      <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Soluções Corporativas — B2B</span>
+          <h2 class="mt-3 font-bold" style="font-size:clamp(1.9rem,4vw,3rem)">Mantenha a TI da sua empresa sempre no ar</h2>
+          <p class="mt-4 text-ink-300">Computador parado custa caro. Oferecemos contratos de <strong class="text-ink-100">manutenção mensal de TI</strong> para o comércio local e órgãos públicos, com <strong class="text-ink-100">gerenciamento de chamados técnicos</strong> e atendimento prioritário.</p>
+          <ul class="mt-6 space-y-3" id="b2b"></ul>
+          <a class="btn brand-gradient text-bg-900 mt-8">Conhecer soluções para empresas <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
+        </div>
+        <div class="grid grid-cols-2 gap-4" id="b2bcards"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Como funciona</span>
+      <h2 class="mt-3 font-bold" style="font-size:clamp(1.9rem,4vw,3rem)">Simples, rápido e sem surpresas</h2>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5" id="proc"></div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="py-20 sm:py-28 bg-bg-800">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Quem confia, recomenda</span>
+    <h2 class="mt-3 font-bold" style="font-size:clamp(1.9rem,4vw,3rem)">Clientes satisfeitos em Jandaia e região</h2>
+    <div class="mt-12 grid lg:grid-cols-3 gap-5" id="dep"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20 sm:py-28">
+  <div class="mx-auto max-w-3xl px-5 sm:px-8 text-center">
+    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Dúvidas frequentes</span>
+    <h2 class="mt-3 font-bold" style="font-size:clamp(1.9rem,4vw,3rem)">Perguntas que recebemos com frequência</h2>
+  </div>
+  <div class="mx-auto max-w-3xl px-5 sm:px-8 mt-12 rounded-2xl border border-line bg-surface/40 divide-y divide-line" id="faq"></div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="relative overflow-hidden border-t border-line">
+  <div class="absolute inset-0 glow-radial"></div>
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-8 py-20 text-center">
+    <h2 class="mx-auto max-w-2xl font-bold" style="font-size:clamp(1.9rem,4vw,3rem)">Seu equipamento precisa de <span class="gradient-text">solução de verdade?</span></h2>
+    <p class="mx-auto mt-4 max-w-xl text-ink-300">Chame agora no WhatsApp. Diagnóstico com precisão, orçamento transparente e atendimento de quem entende do assunto.</p>
+    <a class="btn bg-whatsapp text-bg-900 mt-8 text-base"><i data-lucide="message-circle" class="h-5 w-5"></i>Falar agora no WhatsApp</a>
+    <p class="mt-4 text-sm text-ink-500">(64) 9 9513-5055 — @casstech.jandaia</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-line bg-bg-800">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <img src="public/logo-white.png" alt="Casstech Jandaia" class="h-16 w-auto" />
+    <p class="text-sm text-ink-500">© 2026 Casstech Jandaia — Jandaia de Goiás - GO</p>
+    <div class="flex gap-3">
+      <a class="grid h-10 w-10 place-items-center rounded-lg border border-line text-ink-300"><i data-lucide="instagram" class="h-5 w-5"></i></a>
+      <a class="grid h-10 w-10 place-items-center rounded-lg border border-line text-ink-300"><i data-lucide="message-circle" class="h-5 w-5"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING -->
+<div class="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3">
+  <a class="grid h-12 w-12 place-items-center rounded-full text-white shadow-lg" style="background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)"><i data-lucide="instagram" class="h-6 w-6"></i></a>
+  <a class="grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-white shadow-lg pulse"><i data-lucide="message-circle" class="h-7 w-7"></i></a>
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+const svc = [
+  ['code-2','Apps e Sistemas','Aplicativos e sistemas sob medida: alimentício, agropecuária, lanchonetes, pizzarias, bares, restaurantes, vendas e serviços.'],
+  ['cpu','Reparo de Placa-Mãe','Notebooks que não ligam, curto-circuito e tela preta com diagnóstico preciso em nível de componente.'],
+  ['hard-drive','Upgrade de SSD','Deixe o computador até 10x mais rápido com SSD e mais memória, sem perder seus arquivos.'],
+  ['thermometer','Gerenciamento Térmico','Limpeza interna, troca de pasta térmica e otimização da refrigeração contra travamentos.'],
+  ['database','Recuperação de Dados','Recuperamos fotos, documentos e dados de HDs, SSDs e pendrives com sigilo total.'],
+  ['refresh-cw','Formatação','Formatação completa com backup, sistema otimizado, remoção de vírus e programas essenciais.'],
+  ['network','Redes e Configuração','Wi-Fi estável em todos os ambientes, roteadores e instalação de programas.'],
+];
+document.getElementById('svc').innerHTML = svc.map(s=>`
+  <a class="card glass rounded-2xl p-6 flex flex-col cursor-pointer">
+    <span class="mb-5 grid h-12 w-12 place-items-center rounded-xl border border-primary/20 bg-primary/10 text-primary"><i data-lucide="${s[0]}" class="h-6 w-6"></i></span>
+    <h3 class="text-lg font-semibold text-ink-100">${s[1]}</h3>
+    <p class="mt-2 flex-1 text-sm text-ink-500">${s[2]}</p>
+    <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">Saiba mais <i data-lucide="arrow-right" class="h-4 w-4"></i></span>
+  </a>`).join('');
+
+document.getElementById('b2b').innerHTML = ['Manutenção preventiva e corretiva mensal','Gestão e controle de chamados técnicos','Atendimento prioritário para o seu negócio','Parceria com comércio local e órgãos públicos']
+  .map(t=>`<li class="flex items-start gap-3 text-ink-300"><i data-lucide="check-circle-2" class="h-5 w-5 text-primary mt-0.5"></i><span>${t}</span></li>`).join('');
+
+const b2bc=[['server','Infra','Estável'],['ticket','Chamados','Sob controle'],['timer','Resposta','Prioritária'],['building-2','Foco','Comércio e órgãos']];
+document.getElementById('b2bcards').innerHTML = b2bc.map(c=>`<div class="glass rounded-2xl p-6"><i data-lucide="${c[0]}" class="h-8 w-8 text-primary"></i><p class="mt-4 text-xs uppercase tracking-wider text-ink-500">${c[1]}</p><p class="text-lg font-semibold text-ink-100">${c[2]}</p></div>`).join('');
+
+const proc=[['message-circle','Chame no WhatsApp','Conte o problema. Resposta rápida e sem compromisso.'],['search-check','Diagnóstico','Identificamos a causa raiz com precisão antes de qualquer valor.'],['file-text','Orçamento transparente','Você sabe exatamente o que será feito e por quanto.'],['shield-check','Conserto com garantia','Serviço executado com qualidade e garantia.']];
+document.getElementById('proc').innerHTML = proc.map((p,i)=>`<div class="rounded-2xl border border-line bg-surface/40 p-6"><span class="text-sm font-bold text-primary">0${i+1}</span><span class="mt-3 grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary"><i data-lucide="${p[0]}" class="h-5 w-5"></i></span><h3 class="mt-4 text-base font-semibold text-ink-100">${p[1]}</h3><p class="mt-2 text-sm text-ink-500">${p[2]}</p></div>`).join('');
+
+const dep=[['Marcos A.','Jandaia de Goiás','Meu notebook não ligava de jeito nenhum. A Casstech achou o problema na placa-mãe e resolveu com preço justo. Voltou a funcionar como novo.'],['Juliana R.','Palmeiras de Goiás','Coloquei um SSD e mais memória e meu computador ficou absurdamente mais rápido. Atendimento atencioso e explicaram tudo direitinho.'],['Distribuidora Central','Jandaia de Goiás','Fechamos a manutenção mensal de TI com a Casstech e nunca mais paramos por problema de computador. Resposta rápida nos chamados.']];
+document.getElementById('dep').innerHTML = dep.map(d=>`<figure class="glass rounded-2xl p-6"><div class="flex gap-0.5 text-primary">${'<i data-lucide=star class="h-4 w-4"></i>'.repeat(5)}</div><blockquote class="mt-4 text-sm text-ink-300">"${d[2]}"</blockquote><figcaption class="mt-5 text-sm"><span class="font-semibold text-ink-100">${d[0]}</span><span class="text-ink-500"> — ${d[1]}</span></figcaption></figure>`).join('');
+
+const faq=[['Quanto custa o diagnóstico do meu equipamento?','Fazemos a avaliação e só apresentamos o orçamento depois de identificar o problema. Você decide se quer prosseguir, sem compromisso.'],['Vocês atendem em quais cidades?','Jandaia de Goiás e cidades vizinhas da região. Fale com a gente informando a sua cidade.'],['Meus arquivos ficam seguros?','Sim. Fazemos backup sempre que necessário e tratamos todos os seus dados com sigilo total.'],['Vocês desenvolvem sistema para o meu comércio?','Provavelmente sim: alimentício, agropecuária, lanchonetes, pizzarias, bares, restaurantes, vendas e serviços.']];
+document.getElementById('faq').innerHTML = faq.map(f=>`<details class="group px-6"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-left font-medium text-ink-100">${f[0]}<i data-lucide="plus" class="h-5 w-5 text-primary group-open:rotate-45 transition-transform"></i></summary><p class="pb-5 text-sm text-ink-300 text-left">${f[1]}</p></details>`).join('');
+
+lucide.createIcons();
+</script>
+</body>
+</html>

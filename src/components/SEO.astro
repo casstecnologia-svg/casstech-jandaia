@@ -1,0 +1,98 @@
+---
+import { site } from '@/site.config';
+
+interface Props {
+  title: string;
+  description?: string;
+  path?: string;
+  image?: string;
+  noindex?: boolean;
+  structuredData?: Record<string, any> | Record<string, any>[];
+}
+
+const {
+  title,
+  description = site.description,
+  path = Astro.url.pathname,
+  image = '/og-image.png',
+  noindex = false,
+  structuredData,
+} = Astro.props;
+
+const canonical = new URL(path, site.domain).href.replace(/\/$/, '') || site.domain;
+const ogImage = new URL(image, site.domain).href;
+const fullTitle = title.includes(site.name) ? title : `${title} | ${site.name}`;
+
+// LocalBusiness base (presente em todas as paginas)
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${site.domain}/#business`,
+  name: site.legalName,
+  image: ogImage,
+  url: site.domain,
+  telephone: `+${site.phoneRaw}`,
+  email: site.email,
+  priceRange: site.priceRange,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: site.city,
+    addressRegion: site.state,
+    addressCountry: 'BR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: site.geo.latitude,
+    longitude: site.geo.longitude,
+  },
+  areaServed: site.region,
+  sameAs: [site.instagramUrl],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '18:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '08:00',
+      closes: '12:00',
+    },
+  ],
+};
+
+const schemas = [localBusiness];
+if (Array.isArray(structuredData)) schemas.push(...structuredData);
+else if (structuredData) schemas.push(structuredData);
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<meta name="author" content={site.name} />
+<meta name="geo.region" content="BR-GO" />
+<meta name="geo.placename" content={site.city} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content="pt_BR" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+{
+  schemas.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))
+}
