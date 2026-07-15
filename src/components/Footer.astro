@@ -11,7 +11,7 @@ const year = new Date().getFullYear();
         <img src="/logo-white.png" alt="Casstech Jandaia" width="200" height="127" class="h-20 w-auto" />
       </a>
       <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink-500">
-        Assistencia tecnica especializada e desenvolvimento de sistemas em {site.city} e regiao.
+        Assistência técnica especializada e desenvolvimento de sistemas em {site.city} e região.
       </p>
       <div class="mt-5 flex gap-3">
         <a href={site.instagramUrl} target="_blank" rel="noopener" aria-label="Instagram"
@@ -26,7 +26,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div>
-      <h3 class="text-sm font-semibold uppercase tracking-wider text-ink-100">Navegacao</h3>
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-ink-100">Navegação</h3>
       <ul class="mt-4 space-y-2.5 text-sm">
         {nav.map((item) => (
           <li><a href={item.href} class="text-ink-500 hover:text-primary">{item.label}</a></li>
@@ -53,14 +53,14 @@ const year = new Date().getFullYear();
     </div>
 
     <div>
-      <h3 class="text-sm font-semibold uppercase tracking-wider text-ink-100">Horario</h3>
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-ink-100">Horário</h3>
       <p class="mt-4 flex items-start gap-2 text-sm text-ink-500">
         <Icon name="lucide:clock" class="mt-0.5 h-4 w-4 text-primary" />
         <span>{site.openingHours}</span>
       </p>
       <a href={whatsappLink} target="_blank" rel="noopener" class="btn-primary mt-5 w-full">
         <Icon name="lucide:message-circle" class="h-4 w-4" />
-        Pedir orcamento
+        Pedir orçamento
       </a>
     </div>
   </div>

@@ -1,26 +1,26 @@
 ---
-title: "Gerenciamento Termico e Limpeza Interna"
-shortTitle: "Gerenciamento Termico"
+title: "Gerenciamento Térmico e Limpeza Interna"
+shortTitle: "Gerenciamento Térmico"
 order: 3
 icon: "lucide:thermometer"
 category: "alta-complexidade"
 featured: true
-excerpt: "Notebook esquentando, travando ou desligando? Fazemos limpeza interna, troca de pasta termica e otimizacao da refrigeracao."
+excerpt: "Notebook esquentando, travando ou desligando? Fazemos limpeza interna, troca de pasta térmica e otimização da refrigeração."
 keywords:
   - "notebook esquentando Jandaia"
-  - "troca de pasta termica"
+  - "troca de pasta térmica"
   - "limpeza interna de notebook"
 highlights:
-  - "Diagnostico de superaquecimento e travamentos"
-  - "Troca de pasta termica de alta performance"
+  - "Diagnóstico de superaquecimento e travamentos"
+  - "Troca de pasta térmica de alta performance"
   - "Limpeza completa de coolers e dissipadores"
-  - "Mais vida util e desempenho estavel"
-seoTitle: "Limpeza Interna e Troca de Pasta Termica em Jandaia de Goias | Casstech"
-seoDescription: "Notebook esquentando, travando ou desligando sozinho? A Casstech faz gerenciamento termico, limpeza interna e troca de pasta termica em Jandaia de Goias e regiao."
+  - "Mais vida útil e desempenho estável"
+seoTitle: "Limpeza Interna e Troca de Pasta Térmica em Jandaia de Goiás | Casstech"
+seoDescription: "Notebook esquentando, travando ou desligando sozinho? A Casstech faz gerenciamento térmico, limpeza interna e troca de pasta térmica em Jandaia de Goiás e região."
 ---
 
-O **superaquecimento** é uma das principais causas de travamentos, lentidao e desligamentos repentinos, e, com o tempo, danifica componentes caros.
+O **superaquecimento** é uma das principais causas de travamentos, lentidão e desligamentos repentinos, e, com o tempo, danifica componentes caros.
 
-Fazemos a **limpeza interna completa** (coolers, dissipadores e ventilacao), a **troca da pasta termica** por material de alta performance e a otimizacao do fluxo de ar do equipamento.
+Fazemos a **limpeza interna completa** (coolers, dissipadores e ventilação), a **troca da pasta térmica** por material de alta performance e a otimização do fluxo de ar do equipamento.
 
-O resultado é um notebook que roda **mais frio, mais silencioso e mais estavel**, com ganho real de vida util.
+O resultado é um notebook que roda **mais frio, mais silencioso e mais estável**, com ganho real de vida útil.

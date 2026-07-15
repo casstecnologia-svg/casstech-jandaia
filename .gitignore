@@ -12,3 +12,6 @@ npm-debug.log*
 # macOS / editors
 .DS_Store
 .vscode/
+
+# projeto de marketing (Instagram) - separado do site
+marketing-instagram/

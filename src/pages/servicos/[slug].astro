@@ -36,8 +36,8 @@ const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Inicio', item: site.domain },
-    { '@type': 'ListItem', position: 2, name: 'Servicos', item: `${site.domain}/servicos` },
+    { '@type': 'ListItem', position: 1, name: 'Início', item: site.domain },
+    { '@type': 'ListItem', position: 2, name: 'Serviços', item: `${site.domain}/servicos` },
     { '@type': 'ListItem', position: 3, name: d.title, item: `${site.domain}/servicos/${servico.slug}` },
   ],
 };
@@ -53,9 +53,9 @@ const breadcrumb = {
     <div class="absolute inset-0 bg-glow-radial opacity-60"></div>
     <div class="container-wide relative py-16 sm:py-20">
       <nav class="mb-6 flex items-center gap-2 text-xs text-ink-500" aria-label="breadcrumb">
-        <a href="/" class="hover:text-primary">Inicio</a>
+        <a href="/" class="hover:text-primary">Início</a>
         <span>/</span>
-        <a href="/servicos" class="hover:text-primary">Servicos</a>
+        <a href="/servicos" class="hover:text-primary">Serviços</a>
         <span>/</span>
         <span class="text-ink-300">{d.shortTitle ?? d.title}</span>
       </nav>
@@ -71,11 +71,11 @@ const breadcrumb = {
       <div class="mt-8 flex flex-wrap gap-3">
         <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp">
           <Icon name="lucide:message-circle" class="h-5 w-5" />
-          Pedir orcamento
+          Pedir orçamento
         </a>
         <a href="/servicos" class="btn-ghost">
           <Icon name="lucide:arrow-left" class="h-4 w-4" />
-          Todos os servicos
+          Todos os serviços
         </a>
       </div>
     </div>
@@ -92,7 +92,7 @@ const breadcrumb = {
       <aside class="space-y-6">
         {d.highlights.length > 0 && (
           <div class="glass rounded-2xl p-6">
-            <h2 class="text-base font-semibold text-ink-100">O que voce ganha</h2>
+            <h2 class="text-base font-semibold text-ink-100">O que você ganha</h2>
             <ul class="mt-4 space-y-3">
               {d.highlights.map((h) => (
                 <li class="flex items-start gap-3 text-sm text-ink-300">
@@ -105,7 +105,7 @@ const breadcrumb = {
         )}
         <div class="glass rounded-2xl bg-brand-gradient p-6 text-bg-900">
           <h2 class="text-lg font-bold">Vamos resolver isso?</h2>
-          <p class="mt-2 text-sm text-bg-900/80">Atendimento rapido pelo WhatsApp, sem compromisso.</p>
+          <p class="mt-2 text-sm text-bg-900/80">Atendimento rápido pelo WhatsApp, sem compromisso.</p>
           <a href={whatsappLink} target="_blank" rel="noopener"
             class="mt-4 inline-flex items-center gap-2 rounded-xl bg-bg-900 px-5 py-3 text-sm font-semibold text-ink-100 hover:brightness-125">
             <Icon name="lucide:message-circle" class="h-4 w-4" />
@@ -119,7 +119,7 @@ const breadcrumb = {
   {outros.length > 0 && (
     <section class="section bg-bg-800 pt-16">
       <div class="container-wide">
-        <h2 class="text-fluid-h3 font-bold">Outros servicos</h2>
+        <h2 class="text-fluid-h3 font-bold">Outros serviços</h2>
         <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {outros.map((s) => (
             <ServiceCard

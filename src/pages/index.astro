@@ -29,22 +29,22 @@ const faqSchema = {
 };
 
 const processo = [
-  { icon: 'lucide:message-circle', title: 'Chame no WhatsApp', desc: 'Conte o problema. Resposta rapida e sem compromisso.' },
-  { icon: 'lucide:search-check', title: 'Diagnostico', desc: 'Identificamos a causa raiz com precisao antes de qualquer valor.' },
-  { icon: 'lucide:file-text', title: 'Orcamento transparente', desc: 'Voce sabe exatamente o que sera feito e por quanto.' },
-  { icon: 'lucide:shield-check', title: 'Conserto com garantia', desc: 'Servico executado com qualidade e garantia.' },
+  { icon: 'lucide:message-circle', title: 'Chame no WhatsApp', desc: 'Conte o problema. Resposta rápida e sem compromisso.' },
+  { icon: 'lucide:search-check', title: 'Diagnóstico', desc: 'Identificamos a causa raiz com precisão antes de qualquer valor.' },
+  { icon: 'lucide:file-text', title: 'Orçamento transparente', desc: 'Você sabe exatamente o que será feito e por quanto.' },
+  { icon: 'lucide:shield-check', title: 'Conserto com garantia', desc: 'Serviço executado com qualidade e garantia.' },
 ];
 
 const diferenciais = [
-  { icon: 'lucide:microscope', title: 'Reparo em nivel de componente', desc: 'Vamos alem da troca de pecas: consertamos o que outros descartam.' },
-  { icon: 'lucide:eye', title: 'Transparencia total', desc: 'Sem letra miuda. Orcamento claro antes de comecar.' },
-  { icon: 'lucide:zap', title: 'Agilidade real', desc: 'Diagnostico rapido e atendimento que respeita o seu tempo.' },
-  { icon: 'lucide:headset', title: 'Gestao de chamados', desc: 'Know-how em suporte de TI com controle de chamados para empresas.' },
+  { icon: 'lucide:microscope', title: 'Reparo em nível de componente', desc: 'Vamos além da troca de peças: consertamos o que outros descartam.' },
+  { icon: 'lucide:eye', title: 'Transparência total', desc: 'Sem letra miúda. Orçamento claro antes de começar.' },
+  { icon: 'lucide:zap', title: 'Agilidade real', desc: 'Diagnóstico rápido e atendimento que respeita o seu tempo.' },
+  { icon: 'lucide:headset', title: 'Gestão de chamados', desc: 'Know-how em suporte de TI com controle de chamados para empresas.' },
 ];
 ---
 
 <BaseLayout
-  title="Casstech Jandaia | Assistencia Tecnica de Notebook e TI em Jandaia de Goias"
+  title="Casstech Jandaia | Assistência Técnica de Notebook e TI em Jandaia de Goiás"
   description={site.description}
   path="/"
   structuredData={faqSchema}
@@ -61,20 +61,20 @@ const diferenciais = [
         </span>
         <h1 class="mt-6 text-fluid-hero font-bold leading-[1.05] text-ink-100">
           Tecnologia que resolve.
-          <span class="gradient-text">Confianca que fica.</span>
+          <span class="gradient-text">Confiança que fica.</span>
         </h1>
         <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-300">
-          Assistencia tecnica especializada em notebooks, recuperacao de dados,
-          upgrades e solucoes de TI para empresas. Tambem desenvolvemos
-          aplicativos e sistemas sob medida para o seu negocio.
+          Assistência técnica especializada em notebooks, recuperação de dados,
+          upgrades e soluções de TI para empresas. Também desenvolvemos
+          aplicativos e sistemas sob medida para o seu negócio.
         </p>
         <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp w-full sm:w-auto">
             <Icon name="lucide:message-circle" class="h-5 w-5" />
-            Pedir orcamento no WhatsApp
+            Pedir orçamento no WhatsApp
           </a>
           <a href="/servicos" class="btn-ghost w-full sm:w-auto">
-            Ver servicos
+            Ver serviços
             <Icon name="lucide:arrow-right" class="h-4 w-4" />
           </a>
         </div>
@@ -86,10 +86,10 @@ const diferenciais = [
   <section class="border-y border-line bg-bg-800">
     <div class="container-wide grid grid-cols-2 gap-4 py-8 lg:grid-cols-4">
       {[
-        { icon: 'lucide:badge-check', label: 'Orcamento sem compromisso' },
-        { icon: 'lucide:map-pin', label: 'Jandaia de Goias e regiao' },
-        { icon: 'lucide:shield-check', label: 'Garantia no servico' },
-        { icon: 'lucide:cpu', label: 'Diagnostico especializado' },
+        { icon: 'lucide:badge-check', label: 'Orçamento sem compromisso' },
+        { icon: 'lucide:map-pin', label: 'Jandaia de Goiás e região' },
+        { icon: 'lucide:shield-check', label: 'Garantia no serviço' },
+        { icon: 'lucide:cpu', label: 'Diagnóstico especializado' },
       ].map((b) => (
         <div class="flex items-center justify-center gap-3 text-center">
           <Icon name={b.icon} class="h-6 w-6 flex-shrink-0 text-primary" />
@@ -103,11 +103,11 @@ const diferenciais = [
   <section class="section" id="servicos">
     <div class="container-wide">
       <div class="max-w-2xl">
-        <span class="eyebrow">Nossos servicos</span>
+        <span class="eyebrow">Nossos serviços</span>
         <h2 class="mt-3 text-fluid-h2 font-bold">Do reparo de alta complexidade ao sistema sob medida</h2>
         <p class="mt-4 text-ink-300">
-          Cuidamos do seu equipamento com profundidade tecnica e desenvolvemos
-          solucoes digitais para o seu negocio crescer.
+          Cuidamos do seu equipamento com profundidade técnica e desenvolvemos
+          soluções digitais para o seu negócio crescer.
         </p>
       </div>
       <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -130,21 +130,21 @@ const diferenciais = [
         <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>
         <div class="relative grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <span class="eyebrow">Solucoes Corporativas - B2B</span>
+            <span class="eyebrow">Soluções Corporativas - B2B</span>
             <h2 class="mt-3 text-fluid-h2 font-bold">Mantenha a TI da sua empresa sempre no ar</h2>
             <p class="mt-4 text-ink-300">
               Computador parado custa caro. Oferecemos contratos de
-              <strong class="text-ink-100"> manutencao mensal de TI</strong> para o
-              comercio local e orgaos publicos, com
-              <strong class="text-ink-100"> gerenciamento de chamados tecnicos</strong> e
-              atendimento prioritario.
+              <strong class="text-ink-100"> manutenção mensal de TI</strong> para o
+              comércio local e órgãos públicos, com
+              <strong class="text-ink-100"> gerenciamento de chamados técnicos</strong> e
+              atendimento prioritário.
             </p>
             <ul class="mt-6 space-y-3">
               {[
-                'Manutencao preventiva e corretiva mensal',
-                'Gestao e controle de chamados tecnicos',
-                'Atendimento prioritario para o seu negocio',
-                'Parceria com comercio local e orgaos publicos',
+                'Manutenção preventiva e corretiva mensal',
+                'Gestão e controle de chamados técnicos',
+                'Atendimento prioritário para o seu negócio',
+                'Parceria com comércio local e órgãos públicos',
               ].map((li) => (
                 <li class="flex items-start gap-3 text-ink-300">
                   <Icon name="lucide:check-circle-2" class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
@@ -153,16 +153,16 @@ const diferenciais = [
               ))}
             </ul>
             <a href="/empresas" class="btn-primary mt-8">
-              Conhecer solucoes para empresas
+              Conhecer soluções para empresas
               <Icon name="lucide:arrow-right" class="h-4 w-4" />
             </a>
           </div>
           <div class="grid grid-cols-2 gap-4">
             {[
-              { icon: 'lucide:server', k: 'Infra', v: 'Estavel' },
+              { icon: 'lucide:server', k: 'Infra', v: 'Estável' },
               { icon: 'lucide:ticket', k: 'Chamados', v: 'Sob controle' },
-              { icon: 'lucide:timer', k: 'Resposta', v: 'Prioritaria' },
-              { icon: 'lucide:building-2', k: 'Foco', v: 'Comercio e orgaos' },
+              { icon: 'lucide:timer', k: 'Resposta', v: 'Prioritária' },
+              { icon: 'lucide:building-2', k: 'Foco', v: 'Comércio e órgãos' },
             ].map((c) => (
               <div class="glass rounded-2xl p-6">
                 <Icon name={c.icon} class="h-8 w-8 text-primary" />
@@ -181,7 +181,7 @@ const diferenciais = [
     <div class="container-wide">
       <div class="max-w-2xl">
         <span class="eyebrow">Por que a Casstech</span>
-        <h2 class="mt-3 text-fluid-h2 font-bold">Autoridade tecnica que voce sente na pratica</h2>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Autoridade técnica que você sente na prática</h2>
       </div>
       <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {diferenciais.map((d) => (
@@ -202,7 +202,7 @@ const diferenciais = [
     <div class="container-wide">
       <div class="mx-auto max-w-2xl text-center">
         <span class="eyebrow">Como funciona</span>
-        <h2 class="mt-3 text-fluid-h2 font-bold">Simples, rapido e sem surpresas</h2>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Simples, rápido e sem surpresas</h2>
       </div>
       <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {processo.map((p, i) => (
@@ -224,7 +224,7 @@ const diferenciais = [
     <div class="container-wide">
       <div class="max-w-2xl">
         <span class="eyebrow">Quem confia, recomenda</span>
-        <h2 class="mt-3 text-fluid-h2 font-bold">Clientes satisfeitos em Jandaia e regiao</h2>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Clientes satisfeitos em Jandaia e região</h2>
       </div>
       <div class="mt-12 grid gap-5 lg:grid-cols-3">
         {depoimentos.map((d) => (
@@ -250,10 +250,10 @@ const diferenciais = [
     <div class="container-wide">
       <div class="grid items-center gap-10 lg:grid-cols-2">
         <div>
-          <span class="eyebrow">Area de atuacao</span>
-          <h2 class="mt-3 text-fluid-h2 font-bold">Perto de voce, em Jandaia de Goias e cidades vizinhas</h2>
+          <span class="eyebrow">Área de atuação</span>
+          <h2 class="mt-3 text-fluid-h2 font-bold">Perto de você, em Jandaia de Goiás e cidades vizinhas</h2>
           <p class="mt-4 text-ink-300">
-            Atendemos clientes residenciais e empresas em toda a regiao. Nao
+            Atendemos clientes residenciais e empresas em toda a região. Não
             encontrou a sua cidade? Fale com a gente que confirmamos o atendimento.
           </p>
           <a href="/area-de-atuacao" class="btn-ghost mt-6">
@@ -277,8 +277,8 @@ const diferenciais = [
   <section class="section">
     <div class="container-wide">
       <div class="mx-auto max-w-2xl text-center">
-        <span class="eyebrow">Duvidas frequentes</span>
-        <h2 class="mt-3 text-fluid-h2 font-bold">Perguntas que recebemos com frequencia</h2>
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2 class="mt-3 text-fluid-h2 font-bold">Perguntas que recebemos com frequência</h2>
       </div>
       <div class="mt-12">
         <FAQ items={faqItems} />
@@ -291,10 +291,10 @@ const diferenciais = [
     <div class="absolute inset-0 bg-glow-radial"></div>
     <div class="container-wide relative py-20 text-center">
       <h2 class="mx-auto max-w-2xl text-fluid-h2 font-bold">
-        Seu equipamento precisa de <span class="gradient-text">solucao de verdade?</span>
+        Seu equipamento precisa de <span class="gradient-text">solução de verdade?</span>
       </h2>
       <p class="mx-auto mt-4 max-w-xl text-ink-300">
-        Chame agora no WhatsApp. Diagnostico com precisao, orcamento transparente e
+        Chame agora no WhatsApp. Diagnóstico com precisão, orçamento transparente e
         atendimento de quem entende do assunto.
       </p>
       <a href={whatsappLink} target="_blank" rel="noopener" class="btn-whatsapp mt-8 text-base">

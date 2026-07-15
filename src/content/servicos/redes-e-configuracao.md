@@ -1,26 +1,26 @@
 ---
-title: "Configuracao de Redes e Instalacao"
-shortTitle: "Redes e Configuracao"
+title: "Configuração de Redes e Instalação"
+shortTitle: "Redes e Configuração"
 order: 6
 icon: "lucide:network"
 category: "geral"
 featured: true
-excerpt: "Configuracao de redes, Wi-Fi, roteadores e instalacao de programas para residencias e empresas, com sinal estavel em todos os ambientes."
+excerpt: "Configuração de redes, Wi-Fi, roteadores e instalação de programas para residências e empresas, com sinal estável em todos os ambientes."
 keywords:
-  - "configuracao de rede Jandaia"
-  - "instalacao de Wi-Fi"
-  - "configuracao de roteador"
+  - "configuração de rede Jandaia"
+  - "instalação de Wi-Fi"
+  - "configuração de roteador"
 highlights:
-  - "Wi-Fi estavel em todos os comodos e setores"
-  - "Configuracao de roteadores e repetidores"
-  - "Redes para residencias, lojas e escritorios"
-  - "Instalacao e configuracao de programas"
-seoTitle: "Configuracao de Redes e Wi-Fi em Jandaia de Goias | Casstech"
-seoDescription: "Wi-Fi caindo ou lento? A Casstech configura redes, roteadores e repetidores para residencias e empresas em Jandaia de Goias, com sinal estavel em todos os ambientes."
+  - "Wi-Fi estável em todos os cômodos e setores"
+  - "Configuração de roteadores e repetidores"
+  - "Redes para residências, lojas e escritórios"
+  - "Instalação e configuração de programas"
+seoTitle: "Configuração de Redes e Wi-Fi em Jandaia de Goiás | Casstech"
+seoDescription: "Wi-Fi caindo ou lento? A Casstech configura redes, roteadores e repetidores para residências e empresas em Jandaia de Goiás, com sinal estável em todos os ambientes."
 ---
 
-Internet caindo, sinal fraco em alguns comodos ou uma rede bagunçada na sua loja? Fazemos a **configuracao completa de redes** para residencias e empresas.
+Internet caindo, sinal fraco em alguns cômodos ou uma rede bagunçada na sua loja? Fazemos a **configuração completa de redes** para residências e empresas.
 
-Instalamos e configuramos **roteadores, repetidores e pontos de acesso** para garantir **Wi-Fi estavel** em todos os ambientes, sem pontos cegos.
+Instalamos e configuramos **roteadores, repetidores e pontos de acesso** para garantir **Wi-Fi estável** em todos os ambientes, sem pontos cegos.
 
-Tambem cuidamos da **instalacao e configuracao de programas**, deixando cada estacao de trabalho pronta para produzir.
+Também cuidamos da **instalação e configuração de programas**, deixando cada estação de trabalho pronta para produzir.

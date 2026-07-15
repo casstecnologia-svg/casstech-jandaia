@@ -3,24 +3,24 @@
 
 export const site = {
   name: 'Casstech Jandaia',
-  legalName: 'Casstech Jandaia - Assistencia Tecnica e Solucoes de TI',
+  legalName: 'Casstech Jandaia - Assistência Técnica e Soluções de TI',
   shortName: 'Casstech',
   domain: 'https://www.casstechjandaia.com.br',
   description:
-    'Assistencia tecnica especializada em notebooks, recuperacao de dados, upgrades e solucoes de TI para empresas em Jandaia de Goias e regiao. Tambem desenvolvemos aplicativos e sistemas sob medida.',
-  city: 'Jandaia de Goias',
+    'Assistência técnica especializada em notebooks, recuperação de dados, upgrades e soluções de TI para empresas em Jandaia de Goiás e região. Também desenvolvemos aplicativos e sistemas sob medida.',
+  city: 'Jandaia de Goiás',
   state: 'GO',
-  region: 'Jandaia de Goias e regiao',
+  region: 'Jandaia de Goiás e região',
   priceRange: '$$',
   // Contato
   phoneDisplay: '(64) 9 9513-5055',
   phoneRaw: '5564995135055',
-  whatsappMessage: 'Ola, vim pelo site e quero um orcamento com a Casstech.',
+  whatsappMessage: 'Olá, vim pelo site e quero um orçamento com a Casstech.',
   instagramHandle: '@casstech.jandaia',
   instagramUrl: 'https://instagram.com/casstech.jandaia',
   email: 'casstecnologia@gmail.com',
   // Horario
-  openingHours: 'Segunda a Sexta, 08h as 18h - Sabado, 08h as 12h',
+  openingHours: 'Segunda a Sexta, 08h às 18h - Sábado, 08h às 12h',
   // Geo aproximado de Jandaia de Goias (ajuste se necessario)
   geo: { latitude: -17.1281, longitude: -50.1439 },
 };
@@ -30,10 +30,10 @@ export const whatsappLink = `https://wa.me/${site.phoneRaw}?text=${encodeURIComp
 )}`;
 
 export const nav = [
-  { label: 'Servicos', href: '/servicos' },
+  { label: 'Serviços', href: '/servicos' },
   { label: 'Desenvolvimento', href: '/servicos/desenvolvimento-de-aplicativos-e-sistemas' },
   { label: 'Empresas', href: '/empresas' },
-  { label: 'Area de Atuacao', href: '/area-de-atuacao' },
+  { label: 'Área de Atuação', href: '/area-de-atuacao' },
   { label: 'Blog', href: '/blog' },
   { label: 'Sobre', href: '/sobre' },
   { label: 'Contato', href: '/contato' },
@@ -41,14 +41,14 @@ export const nav = [
 
 // Cidades atendidas (SEO local)
 export const cidades = [
-  'Jandaia de Goias',
-  'Acrena',
-  'Palmeiras de Goias',
+  'Jandaia de Goiás',
+  'Acreúna',
+  'Palmeiras de Goiás',
   'Cezarina',
-  'Varjao',
+  'Varjão',
   'Edealina',
-  'Edeia',
+  'Edéia',
   'Indiara',
-  'Parauna',
-  'Sao Joao da Parauna',
+  'Paraúna',
+  'São João da Paraúna',
 ];
