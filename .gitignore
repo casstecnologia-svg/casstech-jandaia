@@ -7,6 +7,7 @@ node_modules/
 # environment
 .env
 .env.production
+token.env
 # logs
 npm-debug.log*
 # macOS / editors
@@ -15,3 +16,6 @@ npm-debug.log*
 
 # projeto de marketing (Instagram) - separado do site
 marketing-instagram/
+
+# Local Netlify folder
+.netlify

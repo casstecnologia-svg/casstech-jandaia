@@ -13,8 +13,8 @@ export const site = {
   region: 'Jandaia de Goiás e região',
   priceRange: '$$',
   // Contato
-  phoneDisplay: '(64) 9 9513-5055',
-  phoneRaw: '5564995135055',
+  phoneDisplay: '(64) 9 9313-5055',
+  phoneRaw: '5564993135055',
   whatsappMessage: 'Olá, vim pelo site e quero um orçamento com a Casstech.',
   instagramHandle: '@casstech.jandaia',
   instagramUrl: 'https://instagram.com/casstech.jandaia',

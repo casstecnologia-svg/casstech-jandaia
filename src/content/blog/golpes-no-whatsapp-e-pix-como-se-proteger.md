@@ -56,4 +56,4 @@ Golpe digital não escolhe idade, cidade nem tamanho de negócio. O que separa q
 
 Ficou em dúvida se seu computador ou celular foi comprometido, ou precisa de ajuda para deixar seus equipamentos mais seguros? A Casstech atende Jandaia de Goiás e região com diagnóstico, limpeza de vírus e orientação de segurança.
 
-[Fale com a Casstech no WhatsApp](https://wa.me/5564995135055)
+[Fale com a Casstech no WhatsApp](https://wa.me/5564993135055)

@@ -55,4 +55,4 @@ A inteligência artificial para pequenos negócios não é uma corrida de quem t
 
 Em Jandaia de Goiás e região, a Casstech ajuda comércios e prestadores de serviço a usar tecnologia de forma prática, do computador do balcão ao sistema que organiza toda a operação. Se você quer entender por onde começar com IA, proteger seus dados ou desenvolver um sistema sob medida, conte com a gente.
 
-[Fale com a Casstech no WhatsApp](https://wa.me/5564995135055).
+[Fale com a Casstech no WhatsApp](https://wa.me/5564993135055).

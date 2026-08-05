@@ -70,4 +70,4 @@ O melhor backup é o que existe. Não espere ter a estrutura perfeita: comece co
 
 Se você tem um comércio ou empresa em Jandaia de Goiás e região e quer montar uma rotina de backup segura, ou precisa recuperar dados que parecem perdidos, a Casstech pode ajudar. Fazemos o diagnóstico, configuramos a proteção e explicamos tudo de forma simples.
 
-[Fale com a Casstech no WhatsApp](https://wa.me/5564995135055) e proteja as informações do seu negócio antes que o problema aconteça.
+[Fale com a Casstech no WhatsApp](https://wa.me/5564993135055) e proteja as informações do seu negócio antes que o problema aconteça.

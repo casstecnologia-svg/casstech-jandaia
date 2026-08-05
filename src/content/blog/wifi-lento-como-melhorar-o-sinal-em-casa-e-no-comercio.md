@@ -54,4 +54,4 @@ Wi-Fi lento quase nunca é um problema sem solução. Na maioria das vezes, bast
 
 Se a internet da sua casa ou do seu comércio em Jandaia de Goiás e região vive travando, a Casstech pode avaliar, ajustar e deixar tudo funcionando como deveria.
 
-[Fale com a Casstech no WhatsApp](https://wa.me/5564995135055).
+[Fale com a Casstech no WhatsApp](https://wa.me/5564993135055).

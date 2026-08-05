@@ -62,4 +62,4 @@ Notebook que esquenta demais não melhora sozinho — ele só vai desligando mai
 
 Está com esse sintoma no seu notebook? Traga para avaliação em Jandaia de Goiás.
 
-[Fale com a Casstech no WhatsApp](https://wa.me/5564995135055)
+[Fale com a Casstech no WhatsApp](https://wa.me/5564993135055)
